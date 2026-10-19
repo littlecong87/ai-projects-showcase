@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f2ec">
+  <meta name="description" content="AI 落地项目集：公众号内容创作工作台、股票分析智能体与项目实践。">
+  <title>AI 落地项目集｜可验证、工程化、业务导向</title>
+  <style>
+    :root{--paper:#f4f2ec;--white:#fff;--ink:#202923;--sub:#536158;--muted:#7f8981;--line:#e2e0d7;--green:#3e765a;--green-soft:#e8f0e8;--dark:#1e2a23;--gold:#88652d;--gold-soft:#f8f0df;--radius:18px;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}h1,h2,h3,h4,p{margin:0}h1,h2,h3,h4{line-height:1.28;letter-spacing:-.035em}.wrap{width:min(1120px,calc(100% - 48px));margin:auto}.mono,.eyebrow,.section-no{font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase}
+    .topbar{position:sticky;top:0;z-index:10;background:rgba(244,242,236,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.topbar-in{height:62px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-weight:750;font-size:14px}.mark{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--dark);color:#d6e6bd;font:700 11px var(--mono)}nav{display:flex;gap:24px;color:var(--muted);font-size:13px}nav a:hover{color:var(--ink)}
+    .hero{padding:65px 0 52px;background:var(--dark);color:#f5f4ed}.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:42px;align-items:end}.eyebrow{color:#b9d69b;font-size:11px}.hero h1{margin-top:16px;font-size:clamp(38px,6vw,66px);line-height:1.12;max-width:780px}.hero-copy{max-width:760px;margin-top:19px;color:#c5cec6;font-size:17px}.tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}.tag{padding:7px 12px;border:1px solid rgba(255,255,255,.2);border-radius:99px;color:#dce4dc;font-size:12px}.tag.primary{border-color:#b9d69b;background:#b9d69b;color:#243126;font-weight:700}.privacy{margin-top:20px;color:#a3afa5;font-size:11px}.hero-side{padding:17px 0 4px 19px;border-left:1px solid rgba(255,255,255,.22);color:#b9c5bc;font-size:12px}.hero-side strong{display:block;margin-bottom:5px;color:#eef1eb;font-size:13px}
+    .section{padding:67px 0;border-bottom:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:25px}.section-no{color:var(--green);font-size:11px}.section-head h2{margin-top:8px;font-size:clamp(27px,3.6vw,39px)}.lead{max-width:700px;margin-top:10px;color:var(--sub);font-size:15px}.status{flex:none;padding:7px 12px;border:1px solid #e7d7b6;border-radius:99px;background:var(--gold-soft);color:var(--gold);font-size:12px;font-weight:700}
+    .workbench{overflow:hidden;border:1px solid #deddd4;border-radius:var(--radius);background:#fff;box-shadow:0 18px 48px rgba(31,42,34,.08)}.wb-bar{height:46px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;border-bottom:1px solid var(--line);font-size:11px;color:var(--muted)}.wb-bar strong{color:#34443a;font-size:12px}.wb-badge{padding:4px 9px;border-radius:99px;background:var(--green-soft);color:var(--green)}.wb{display:grid;grid-template-columns:190px minmax(0,1fr);min-height:375px}.wb-side{padding:20px 15px;border-right:1px solid var(--line);background:#fcfbf8}.wb-brand{display:flex;align-items:center;gap:9px;padding-bottom:17px;border-bottom:1px solid #e9e7df}.wb-icon{display:grid;place-items:center;width:31px;height:31px;border-radius:10px;background:#e8eee1;color:#426044;font-weight:800}.wb-brand b,.wb-brand small{display:block}.wb-brand b{font-size:12px}.wb-brand small{color:#9ca39a;font:8px var(--mono);letter-spacing:.1em}.side-label{margin:18px 0 7px;color:#a2a79f;font:8px var(--mono);letter-spacing:.14em}.side-nav{display:grid;gap:4px}.side-nav span{padding:7px 9px;border-radius:7px;color:#626e65;font-size:11px}.side-nav .selected{background:#edf1e7;color:#324934;font-weight:700}.account{margin-top:14px;padding:10px;border:1px solid var(--line);border-radius:9px;background:white}.account b{font-size:10px}.account p{margin-top:3px;color:#899189;font-size:9px;line-height:1.5}.wb-main{min-width:0;padding:23px}.wb-title{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.wb-title h3{font-size:20px}.wb-title p{margin-top:5px;color:var(--muted);font-size:10px}.demo-account{padding:5px 8px;border:1px solid var(--line);border-radius:7px;color:#707a72;font-size:9px;white-space:nowrap}.composer{display:grid;grid-template-columns:.95fr 1.05fr;gap:12px;margin-top:17px}.pane{min-width:0;padding:14px;border:1px solid #e6e4dc;border-radius:12px;background:#fff}.pane-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px}.pane-head b{font-size:11px}.pane-head small{color:#a2a79f;font:8px var(--mono);letter-spacing:.08em}.field-label{margin:10px 0 5px;color:#808980;font-size:9px}.options{display:flex;flex-wrap:wrap;gap:5px}.option{padding:4px 7px;border:1px solid #e6e4dc;border-radius:6px;color:#737d74;font-size:8px}.option.on{border-color:#bdcdb1;background:#f0f4ea;color:#476148}.fake-input{padding:8px 9px;border:1px solid #e8e7e0;border-radius:7px;color:#8e968f;font-size:9px;line-height:1.55}.fake-button{display:inline-block;margin-top:9px;padding:6px 9px;border-radius:6px;background:#58745c;color:#fff;font-size:8px}.editor-copy{min-height:141px;padding:11px;border:1px solid #ecebe5;border-radius:8px;color:#69756c;font-size:10px;line-height:1.75}.editor-copy strong{display:block;margin-bottom:7px;color:#34443a;font-size:12px}.editor-foot{display:flex;justify-content:space-between;gap:8px;margin-top:8px;padding-top:7px;border-top:1px solid #ecebe5;color:#9aa198;font-size:8px}.workbench-note{display:flex;justify-content:space-between;gap:14px;margin-top:10px;color:var(--muted);font-size:10px}
+    .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:31px;padding-top:25px;border-top:1px solid var(--line)}.story h3{font-size:15px}.story p{margin-top:7px;color:var(--sub);font-size:13px;line-height:1.85}.capabilities{display:flex;flex-wrap:wrap;gap:9px;margin-top:17px;color:var(--sub);font-size:11px}.capabilities span+span:before{content:"/";margin-right:9px;color:#b0b5ad}.model-note{margin-top:13px;color:var(--muted);font-size:11px}.loop{margin-top:32px;padding:23px;border-radius:15px;background:#e9eee6}.loop-top{display:flex;justify-content:space-between;align-items:flex-end;gap:22px;margin-bottom:18px}.loop-top h3{margin-top:6px;font-size:21px}.loop-top p{max-width:420px;color:var(--sub);font-size:11px}.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0}.step{position:relative;padding:3px 15px 2px 0}.step:not(:last-child):after{content:"→";position:absolute;right:10px;top:20px;color:#829486;font-size:15px}.step em{color:var(--green);font:10px var(--mono);font-style:normal;letter-spacing:.1em}.step h4{margin-top:5px;font-size:13px}.step p{margin-top:4px;color:#69766c;font-size:10px;line-height:1.6}.step small{display:block;margin-top:6px;color:#536158;font-size:9px}.feedback{display:flex;align-items:center;gap:9px;margin-top:17px;padding-top:14px;border-top:1px solid #d4ddd2;color:var(--sub);font-size:11px}.feedback strong{color:#3e5f46}
+    .finance-panel{overflow:hidden;border:1px solid #dce2e7;border-radius:var(--radius);background:#fff;box-shadow:0 16px 42px rgba(30,43,53,.07)}.finance-image{display:block;width:100%;height:auto}.finance-caption{display:flex;justify-content:space-between;gap:12px;padding:11px 15px;border-top:1px solid #e5eaee;color:var(--muted);font-size:10px}.finance-story{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:24px}.finance-story h3{font-size:15px}.finance-story p{margin-top:6px;color:var(--sub);font-size:13px;line-height:1.85}.facts{display:flex;flex-wrap:wrap;gap:11px 24px;margin-top:18px;padding-top:14px;border-top:1px solid var(--line);color:var(--sub);font-size:11px}.facts b{color:var(--ink)}
+    .practice{padding:58px 0 62px}.practice-intro{max-width:740px;margin-top:10px;color:var(--sub);font-size:14px}.practice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:26px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.practice-item{padding:20px 23px 21px 0}.practice-item+.practice-item{padding-left:23px;border-left:1px solid var(--line)}.practice-item em{color:var(--green);font:10px var(--mono);font-style:normal;letter-spacing:.1em}.practice-item h3{margin-top:8px;font-size:15px}.practice-item p{margin-top:7px;color:var(--muted);font-size:12px;line-height:1.8}.summary{margin-top:24px;padding:14px 17px;border-left:2px solid var(--green);color:var(--sub);font-size:13px;line-height:1.85}.summary strong{color:var(--ink)}footer{padding:18px 0 30px;border-top:1px solid var(--line);color:var(--muted);font-size:10px}.footer-in{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.footer-in strong{color:var(--sub)}
+    @media(max-width:800px){.hero-grid{grid-template-columns:1fr}.hero-side{max-width:350px}.wb{grid-template-columns:155px minmax(0,1fr)}.wb-side{padding:16px 11px}.wb-main{padding:17px}.steps{grid-template-columns:repeat(3,1fr);row-gap:18px}.step:nth-child(3):after{display:none}}
+    @media(max-width:620px){.wrap{width:calc(100% - 30px)}.topbar-in{height:55px}.brand span:last-child{display:none}nav{gap:12px;font-size:11px}.hero{padding:42px 0 35px}.hero h1{font-size:42px}.hero-copy{font-size:14px}.hero-side{font-size:11px}.section{padding:43px 0}.section-head{display:block}.section-head h2{font-size:28px}.lead{font-size:13px}.status{display:inline-flex;margin-top:12px}.wb-bar{height:40px;padding:0 11px;font-size:9px}.wb-bar strong{font-size:10px}.wb{grid-template-columns:1fr}.wb-side{display:flex;align-items:center;gap:8px;padding:9px 12px;border-right:0;border-bottom:1px solid var(--line)}.wb-brand{padding:0;border:0}.side-label,.side-nav,.account{display:none}.wb-main{padding:13px}.wb-title h3{font-size:17px}.wb-title p{max-width:290px;font-size:9px}.demo-account{font-size:8px}.composer{grid-template-columns:1fr;gap:8px;margin-top:12px}.pane{padding:11px}.editor-copy{min-height:92px}.workbench-note{display:block;font-size:9px}.workbench-note span{display:block}.story-grid,.finance-story{grid-template-columns:1fr;gap:18px;margin-top:22px}.story h3,.finance-story h3{font-size:14px}.story p,.finance-story p{font-size:12px}.loop{padding:17px}.loop-top{display:block}.loop-top h3{font-size:18px}.loop-top p{margin-top:6px}.steps{grid-template-columns:1fr 1fr;gap:15px 10px}.step{padding-right:4px}.step:after{display:none}.feedback{align-items:flex-start;font-size:10px}.finance-caption{display:block;font-size:9px}.finance-caption span{display:block}.finance-caption span+span{margin-top:3px}.facts{gap:8px 16px}.practice{padding:43px 0}.practice-grid{grid-template-columns:1fr}.practice-item{padding:16px 0}.practice-item+.practice-item{padding-left:0;border-left:0;border-top:1px solid var(--line)}.summary{font-size:12px}.footer-in{display:block}.footer-in span{display:block}.footer-in span+span{margin-top:4px}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><div class="wrap topbar-in">
+    <a class="brand" href="#top"><span class="mark">GC</span><span>AI 项目集</span></a>
+    <nav aria-label="页面导航"><a href="#wechat">公众号工作台</a><a href="#finance">金融 AI</a><a href="#practice">项目实践</a></nav>
+  </div></header>
+  <main id="top">
+    <section class="hero"><div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">AI 落地项目集 · 可验证、工程化、业务导向</p>
+        <h1>把 AI 放入日常中</h1>
+        <p class="hero-copy">主项目是公众号内容工作台；金融 AI 项目的业务工作台仍在验证中。</p>
+        <div class="tags"><span class="tag primary">主项目　公众号内容创作工作台</span><span class="tag">股票分析　金融工作台验证中</span></div>
+        <p class="privacy">展示范围：界面与示例内容已脱敏；不公开完整提示词、Skill 源码、账号凭据或内部策略参数。</p>
+      </div>
+      <aside class="hero-side"><strong>项目展示重点</strong>直接看工作台、项目处理方式和当前状态。</aside>
+    </div></section>
+
+    <section class="section" id="wechat"><div class="wrap">
+      <div class="section-head"><div><p class="section-no">SELECTED WORK 01 · 内容创作</p><h2>公众号贴图 / 文章 AI 内容创作工作台</h2><p class="lead">围绕创作者的日常任务，把来源、账号风格、内容生成和稿件编辑放进同一创作入口。</p></div></div>
+      <div class="workbench" aria-label="公众号内容工作台首页脱敏演示">
+        <div class="wb-bar"><strong>公众号内容工作台　/　创作台首页</strong><span class="wb-badge">脱敏演示界面</span></div>
+        <div class="wb">
+          <aside class="wb-side">
+            <div class="wb-brand"><span class="wb-icon">稿</span><span><b>内容工作台</b><small>WECHAT STUDIO</small></span></div>
+            <div class="side-label">WORKSPACE</div><div class="side-nav"><span class="selected">✦　创作台</span><span>▤　历史记录</span><span>⌁　内容检查</span></div>
+            <div class="side-label">当前账号</div><div class="account"><b>演示账号</b><p>复用读者设定、表达语气与文章结构</p></div>
+          </aside>
+          <div class="wb-main">
+            <div class="wb-title"><div><h3>把灵感，写成下一篇。</h3><p>选择账号风格，从话题或参考来源开始。生成后可继续编辑。</p></div><span class="demo-account">演示账号　⌄</span></div>
+            <div class="composer">
+              <div class="pane"><div class="pane-head"><b>先设定这次创作</b><small>CREATE</small></div>
+                <div class="field-label">内容形式</div><div class="options"><span class="option on">普通图文</span><span class="option">贴图内容</span></div>
+                <div class="field-label">创作来源</div><div class="options"><span class="option on">输入话题</span><span class="option">粘贴链接</span></div>
+                <div class="fake-input" style="margin-top:7px">输入本次主题或参考文章…</div>
+                <div class="field-label">沿用账号表达设定</div><div class="fake-input">读者 · 语气 · 文章结构　可按本次任务调整</div>
+                <span class="fake-button">调用写作 Skill　↗</span>
+              </div>
+              <div class="pane"><div class="pane-head"><b>稿件编辑区</b><small>DRAFT EDITOR</small></div>
+                <div class="field-label">标题 / 封面主句</div><div class="fake-input">把零散的想法，整理成可读的内容</div>
+                <div class="field-label">文章正文 · 演示文本</div>
+                <div class="editor-copy"><strong>让 AI 先完成初稿，人再把关内容。</strong>初稿生成后，可以继续调整标题、正文和封面。来源、事实和表达由创作者核对；确认后再保存或提交公众号草稿。</div>
+                <div class="editor-foot"><span>本地历史 · 可继续编辑</span><span>人工确认后交付 ↗</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="workbench-note"><span>首页能力展示：创作入口、账号配置与稿件编辑同屏。</span><span>公开版已替换账号信息和实际稿件。</span></div>
+      <div class="story-grid">
+        <article class="story"><h3>关键难点与处理方式</h3><p>不同公众号和内容类型对风格、结构的要求不同，单套提示词很难兼顾稳定与差异。将读者、语气、结构沉淀为账号配置，再按任务调用对应 Skill，并用固定样例检查输出和交付状态。</p></article>
+        <article class="story"><h3>项目结果与当前状态</h3><p>文章链路已接入本机 Codex 与写作 Skill；本机服务在线时可生成、编辑和留存，写入公众号草稿前由人确认。贴图 Agent 独立运行，工作台内的图像能力仍在验证中。</p></article>
+      </div>
+      <div class="capabilities"><span>工作流设计</span><span>Skill 编排</span><span>输出质检</span><span>人机协作</span></div>
+      <p class="model-note"><strong>模型与工具：</strong>文章由本机 Codex 调用对应写作 Skill，文本模型随运行配置；图像生成单独配置，不从文本模型推断。</p>
+      <div class="loop">
+        <div class="loop-top"><div><p class="section-no">内容创作闭环</p><h3>一篇内容，从素材走到复盘，流程AI化</h3></div><p>素材整理、初稿生成、质检到数据回看，AI 帮忙处理重复步骤；内容和发布由人确认。</p></div>
+        <div class="steps">
+          <article class="step"><em>01</em><h4>素材采集</h4><p>整理对标内容和选题素材</p><small>产出：可用素材</small></article>
+          <article class="step"><em>02</em><h4>文章生成</h4><p>按账号表达习惯生成初稿</p><small>产出：文章初稿</small></article>
+          <article class="step"><em>03</em><h4>内容质检</h4><p>检查内容、补充修改</p><small>产出：可编辑成稿</small></article>
+          <article class="step"><em>04</em><h4>排版发布</h4><p>整理版式，提交草稿箱</p><small>产出：待确认草稿</small></article>
+          <article class="step"><em>05</em><h4>数据复盘</h4><p>回看阅读表现和内容反馈</p><small>产出：下轮选题方向</small></article>
+        </div>
+        <div class="feedback"><strong>人工判断 + 数据反馈</strong><span>调整选题与内容做法，再开始下一轮</span></div>
+      </div>
+    </div></section>
+
+    <section class="section" id="finance"><div class="wrap">
+      <div class="section-head"><div><p class="section-no">SELECTED WORK 02 · 金融研究</p><h2>股票分析智能体 / 金融 AI 工作台</h2><p class="lead">将股票研究任务拆成可核对的数据处理、规则计算、分析整理与人工复核，让金融 AI 进入已有研究工作流。</p></div><span class="status">工作台验证中</span></div>
+      <figure class="finance-panel"><img class="finance-image" src="assets/finance-ai-workbench-reference.png" alt="金融 AI 工作台演示首页，界面包含虚构的任务与项目数据"><figcaption class="finance-caption"><span>金融 AI 工作台 · 商业场景演示界面</span><span>界面指标及任务均为虚构演示数据，不代表实测结果。</span></figcaption></figure>
+      <div class="finance-story">
+        <article><h3>项目结果</h3><p>股票研究工作流已搭建，并使用历史样本回放检验规则假设。金融 AI 工作台的业务场景与交互仍在验证中。</p></article>
+        <article><h3>我的 AI 判断</h3><p>语言模型负责理解研究问题、归纳结构化结果并组织报告；行情获取、指标计算和筛选规则由程序完成；研究结论由人核对后使用。</p></article>
+      </div>
+      <div class="facts"><span><b>模型配置</b>　Solar Pro 4 · Nous provider</span><span><b>配置快照</b>　2026-10-16</span><span><b>使用边界</b>　辅助研究，不替代交易决策</span></div>
+    </div></section>
+
+    <section class="practice" id="practice"><div class="wrap">
+      <p class="section-no">项目里的实际做法</p><h2>实际做的时候，我主要抓这三点</h2>
+      <p class="practice-intro">做公众号内容和股票研究，我会先把事情拆清楚：哪些适合 AI 干，哪些适合程序干，哪些必须我自己盯。拆完再用真实任务反复试。</p>
+      <div class="practice-grid">
+        <article class="practice-item"><em>01 · 分工</em><h3>先分清楚谁干什么</h3><p>需求理解、资料整理和初稿，我让 AI 来做；数据计算和格式检查，交给程序；但关键事实和最终稿，我必须自己核对过才交付。</p></article>
+        <article class="practice-item"><em>02 · 试用</em><h3>拿不同任务反复试</h3><p>我会换主题、换资料多跑几遍，看有没有跑题、漏信息，生成结果能不能直接接着改。发现哪里不对，就调整写作规则，再用同类任务复查一遍。</p></article>
+        <article class="practice-item"><em>03 · 排查</em><h3>出错了从源头一步步查</h3><p>从输入资料、写作规则、模型回答到工具执行，逐层排查，定位到具体卡点再修，修完重跑确认。</p></article>
+      </div>
+      <p class="summary"><strong>一句话总结：</strong>主动学习，用真实场景验证想法和AI落地效果，理论与实践不断结合提升AI能力</p>
+    </div></section>
+  </main>
+  <footer><div class="wrap footer-in"><span><strong>高聪 · AI 项目作品集</strong></span><span>公开展示页 · 信息脱敏 · 金融 AI 工作台验证中</span></div></footer>
+</body>
+</html>
