@@ -69,14 +69,6 @@
     <section class="section" id="finance"><div class="wrap">
       <div class="section-head"><div><p class="kicker">PROJECT 02 · 金融研究</p><h2>金融 AI 投研</h2><p class="lead">股票分析智能体系统</p><p class="lead">针对 A 股日常投研、复盘研判场景，搭建<strong>数据驱动、模型辅助、人工终审</strong>的自动化投研工作流，解决传统 AI 投研数据不可靠、结论不可控、无法迭代复用的落地痛点。</p></div><span class="state">金融 AI 工作台验证中</span></div>
       <figure class="finance-view"><img class="finance-image" src="assets/finance-ai-workbench-reference.png" alt="金融 AI 工作台演示页面，展示项目空间、研究任务和金融业务场景"><figcaption class="finance-caption"><span>金融 AI 工作台 · 商业化场景页面示意</span><span>界面任务、指标为虚构演示数据；工作台仍在验证中</span></figcaption></figure>
-      <h3 class="subhead">核心设计思路</h3>
-      <div class="design-grid">
-        <article class="design-card"><h3>算力与模型解耦</h3><p>量化指标计算、数据校验、风险筛选等确定性逻辑由代码实现；LLM 仅负责任务理解、结果归纳、报告生成，从根源规避模型幻觉带来的硬核数据误差。</p></article>
-        <article class="design-card"><h3>数据前置校验</h3><p>所有分析流程优先核验数据时效、完整性、来源可信度，数据异常自动熔断停止输出，杜绝脏数据生成无效结论。</p></article>
-        <article class="design-card"><h3>严守人机决策边界</h3><p>AI 仅承担信息汇总、分析报告输出等辅助工作，核心交易决策保留人工终审，完全适配金融行业风控合规要求。</p></article>
-        <article class="design-card"><h3>全链路可回溯迭代</h3><p>完整留存数据口径、模型版本、任务快照与输出日志，支持规则迭代后的样本回归对比，持续优化流程精度。</p></article>
-      </div>
-      <div class="flow-box"><div class="flow-head"><h3>业务流程</h3><p>先检查输入数据，再由代码完成确定性计算，模型整理结果，最后由人复核。</p></div><div class="flow" aria-label="股票分析流程"><div class="flow-node"><small>01</small><b>获取行情与参考数据</b><span>明确研究对象和数据来源</span></div><div class="flow-node"><small>02</small><b>校验数据</b><span>时效、完整性、来源状态</span></div><div class="flow-node"><small>03</small><b>代码计算与筛选</b><span>指标、规则、风险门槛</span></div><div class="flow-node"><small>04</small><b>模型整理分析</b><span>生成候选分析或盘后报告</span></div><div class="flow-node"><small>05</small><b>人工终审</b><span>核对结果后决定后续操作</span></div></div></div>
       <div class="finance-points"><article class="finance-card"><h3>项目成果</h3><p>搭建完成一套常态化自用的标准化 AI 投研辅助工具，实现金融 AI 分析流程规范化、风险可控化、结果可验证，持续迭代优化中。</p></article><article class="finance-card"><h3>AI 使用边界</h3><p>AI 辅助信息整理与分析报告生成；数据和规则由程序处理，研究结论由人工终审，不替代交易决策。</p></article></div>
       <p class="model"><b>模型配置说明：</b>金融研究项目当前配置快照为 Solar Pro 4 · Nous provider（2026-10-16）。公众号内容链路由文本模型负责文案、独立视觉链路负责配图；具体运行模型按任务配置。</p>
     </div></section>
