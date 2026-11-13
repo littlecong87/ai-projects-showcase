@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f4f2ec">
-  <meta name="description" content="高聪的 AI 落地项目集：公众号内容生产工作流与金融 AI 投研辅助工具。">
+  <meta name="description" content="高聪的 AI 项目集：公众号内容工作台、企业 AI Agent 平台产品设计与金融 AI 投研辅助工具。">
   <title>AI 落地项目集｜可验证、工程化、业务导向</title>
   <style>
     :root{--paper:#f4f2ec;--card:#fff;--ink:#202923;--body:#536158;--muted:#7d8981;--line:#deded5;--green:#3e765a;--green-pale:#e8eee6;--dark:#1e2a23;--gold:#9a7139;--radius:18px;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
@@ -17,22 +17,25 @@
     .subhead{margin:32px 0 14px;font-size:18px}.design-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.design-card{padding:16px 17px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.62)}.design-card h3{font-size:14px}.design-card p{margin-top:6px;color:var(--body);font-size:12px;line-height:1.8}
     .flow-box{margin-top:25px;padding:21px;border-radius:15px;background:#e9eee6}.flow-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;margin-bottom:15px}.flow-head h3{font-size:19px}.flow-head p{max-width:540px;color:var(--body);font-size:11px}.flow{display:flex;align-items:stretch;gap:9px}.flow-node{position:relative;flex:1;min-width:0;padding:12px 11px;border:1px solid #d7dfd4;border-radius:10px;background:rgba(255,255,255,.72)}.flow-node:not(:last-child):after{content:"→";position:absolute;right:-10px;top:50%;z-index:1;transform:translate(50%,-50%);color:#6e8972;font-size:15px}.flow-node small{display:block;color:var(--green);font:9px var(--mono);letter-spacing:.08em}.flow-node b{display:block;margin-top:3px;font-size:11px}.flow-node span{display:block;margin-top:3px;color:#69766c;font-size:9px;line-height:1.5}.result{margin-top:21px;padding:17px 19px;border-left:2px solid var(--green);background:rgba(255,255,255,.55);color:var(--body);font-size:13px;line-height:1.85}.result strong{color:var(--ink)}
     .finance-view{overflow:hidden;border:1px solid #dce2e7;border-radius:var(--radius);background:#fff;box-shadow:0 15px 42px rgba(30,43,53,.07)}.finance-image{display:block;width:100%;height:auto}.finance-caption{display:flex;justify-content:space-between;gap:10px;padding:11px 15px;border-top:1px solid #e5eaee;color:var(--muted);font-size:10px}.finance-points{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin-top:23px}.finance-card{padding:16px 17px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.62)}.finance-card h3{font-size:14px}.finance-card p{margin-top:6px;color:var(--body);font-size:12px;line-height:1.8}.model{margin-top:16px;padding:12px 15px;border-radius:10px;background:#ecefe9;color:var(--body);font-size:11px}.model b{color:var(--ink)}
+    .agent-showcase{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);align-items:start;gap:16px;margin-top:23px}.agent-preview{overflow:hidden;margin:0;border:1px solid #dce2e7;border-radius:var(--radius);background:#fff;box-shadow:0 15px 42px rgba(30,43,53,.07)}.agent-preview img{display:block;width:100%;height:auto}.agent-caption{display:flex;justify-content:space-between;gap:10px;padding:11px 15px;border-top:1px solid #e5eaee;color:var(--muted);font-size:10px}.agent-work{padding:18px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.62)}.agent-work h3{margin-top:6px;font-size:17px}.agent-work ul{display:grid;gap:12px;margin:15px 0 0;padding:0;list-style:none}.agent-work li{padding-left:12px;border-left:2px solid var(--green)}.agent-work li b{display:block;font-size:12px}.agent-work li span{display:block;margin-top:2px;color:var(--body);font-size:11px;line-height:1.7}
     .practice{padding:58px 0 63px}.practice-head{max-width:760px}.practice-head h2{margin-top:8px;font-size:clamp(27px,3.4vw,37px)}.practice-head p{margin-top:10px;color:var(--body);font-size:14px}.practice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.practice-card{padding:18px 20px 19px 0}.practice-card+.practice-card{padding-left:20px;border-left:1px solid var(--line)}.practice-card small{color:var(--green);font:10px var(--mono);letter-spacing:.1em}.practice-card h3{margin-top:7px;font-size:14px}.practice-card p{margin-top:6px;color:var(--muted);font-size:11px;line-height:1.8}.verification{margin-top:22px;padding:16px 18px;border-radius:13px;background:#e9eee6}.verification h3{font-size:14px}.verify-flow{display:flex;align-items:center;gap:10px;margin-top:10px;color:#47634d;font-size:11px;font-weight:650}.verify-flow span{flex:1}.verify-flow i{color:#91a194;font-style:normal}.summary{margin-top:18px;padding-left:15px;border-left:2px solid var(--green);color:var(--body);font-size:13px}.summary strong{color:var(--ink)}footer{padding:18px 0 28px;border-top:1px solid var(--line);color:var(--muted);font-size:10px}.footer-in{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.footer-in b{color:var(--body)}
     @media(max-width:800px){.work-grid{grid-template-columns:145px minmax(0,1fr)}.sidebar{padding:16px 10px}.main-pane{padding:17px}.flow{flex-wrap:wrap}.flow-node{flex:1 1 28%}.flow-node:nth-child(3):after{display:none}.metrics{grid-template-columns:repeat(2,1fr);padding:8px 14px}.metric{min-height:94px;padding:12px 15px}.metric-main{grid-column:1 / -1;min-height:105px;border-bottom:1px solid rgba(255,255,255,.18)}.metric-main b{font-size:46px}.metric:nth-child(2){border-left:0}}
     @media(max-width:620px){.wrap{width:calc(100% - 30px)}.topbar-in{height:54px}.brand span:last-child{display:none}nav{gap:12px;font-size:10px}.hero{padding:43px 0 38px}.hero h1{font-size:42px}.hero-intro{font-size:13px}.section{padding:42px 0}.section-head{display:block}.section-head h2{font-size:28px}.lead{font-size:12px}.state{display:inline-flex;margin-top:11px}.work-top{height:40px;padding:0 11px;font-size:9px}.work-top b{font-size:10px}.work-grid{grid-template-columns:1fr}.sidebar{display:flex;align-items:center;gap:8px;padding:9px 12px;border-right:0;border-bottom:1px solid var(--line)}.wb-brand{padding:0;border:0}.side-cap,.side-item{display:none}.main-pane{padding:12px}.main-title h3{font-size:16px}.main-title p{max-width:280px;font-size:9px}.account{font-size:8px}.editor-grid{grid-template-columns:1fr;gap:8px;margin-top:12px}.pane{padding:10px}.draft{min-height:90px}.work-note{display:block;font-size:9px}.work-note span{display:block}.metrics{grid-template-columns:repeat(2,1fr);gap:8px;padding:8px 12px}.metric{min-height:84px;padding:11px 10px}.metric-main{grid-column:1 / -1;min-height:95px;border-bottom:1px solid rgba(255,255,255,.18)}.metric+.metric{border-left:1px solid rgba(255,255,255,.18)}.metric-main+.metric{border-left:0}.metric:nth-child(2){border-left:0}.metric-main b{font-size:42px}.metric b{font-size:23px}.metric span{font-size:10px}.metric:nth-child(4){grid-column:1 / -1;border-top:1px solid rgba(255,255,255,.18);border-left:0}.design-grid,.finance-points{grid-template-columns:1fr}.design-card,.finance-card{padding:13px}.subhead{margin-top:24px}.flow-box{padding:15px}.flow-head{display:block}.flow-head p{margin-top:6px}.flow-node{flex:1 1 calc(50% - 10px)}.flow-node:after{display:none!important}.result{font-size:12px;padding:15px 16px}.finance-caption{display:block;font-size:9px}.finance-caption span{display:block}.finance-caption span+span{margin-top:3px}.practice{padding:42px 0}.practice-head h2{font-size:28px}.practice-head p{font-size:12px}.practice-grid{grid-template-columns:1fr}.practice-card{padding:14px 0}.practice-card+.practice-card{padding-left:0;border-left:0;border-top:1px solid var(--line)}.verify-flow{flex-wrap:wrap;gap:6px}.verify-flow span{flex:0 0 auto}.verify-flow i{margin:0 1px}.summary{font-size:11px}.footer-in{display:block}.footer-in span{display:block}.footer-in span+span{margin-top:4px}}
+    @media(max-width:800px){.agent-showcase{grid-template-columns:1fr}}
+    @media(max-width:620px){.agent-work{padding:14px}.agent-caption{display:block;font-size:9px}.agent-caption span{display:block}.agent-caption span+span{margin-top:3px}}
   </style>
 </head>
 <body>
   <header class="topbar"><div class="wrap topbar-in">
     <a class="brand" href="#top"><span class="mark">GC</span><span>AI 项目集</span></a>
-    <nav aria-label="页面导航"><a href="#content">公众号内容</a><a href="#finance">股票分析</a><a href="#practice">落地方法</a></nav>
+    <nav aria-label="页面导航"><a href="#content">公众号内容</a><a href="#agent">企业 Agent</a><a href="#finance">股票分析</a><a href="#practice">落地方法</a></nav>
   </div></header>
   <main id="top">
     <section class="hero"><div class="wrap">
       <p class="eyebrow">AI PROJECTS · SELECTED WORK</p>
       <h1>AI 落地项目集</h1>
       <p class="hero-intro"><strong>AI 项目总结与落地理解</strong><br>本人对 AI 落地的核心理解：<strong>大模型仅负责智能生成，真正可上线、稳定、可持续迭代的 AI 系统，是由数据、规则、工具、人机边界、验证机制共同构成的闭环工作流</strong>。<br><br>以下均为个人全链路落地项目，核心优势为<strong>流程结构化、输出可管控、结果可验收、能力可回归迭代</strong>，区别于普通模型 Demo，具备完整的 AI 业务落地与工程化思维。</p>
-      <div class="hero-tags"><span class="tag">项目一　公众号 AI 内容生产</span><span class="tag">项目二　金融 AI 投研</span></div>
+      <div class="hero-tags"><span class="tag">项目一　公众号 AI 内容生产</span><span class="tag">项目二　企业 AI Agent 平台</span><span class="tag">项目三　金融 AI 投研</span></div>
       <p class="privacy">公开展示工作流、项目结果与方法；不展示可复用的核心提示词、Skill 源码或内部参数。</p>
     </div></section>
 
@@ -66,8 +69,21 @@
       <div class="flow-box"><div class="flow-head"><h3>业务流程</h3><p>文案和视觉分别生成，经过规则检查与人工审核后再交付。</p></div><div class="flow" aria-label="公众号内容生产流程"><div class="flow-node"><small>01</small><b>选题与素材</b><span>明确方向和参考内容</span></div><div class="flow-node"><small>02</small><b>文章 / 贴图创作</b><span>文案与视觉分层协作</span></div><div class="flow-node"><small>03</small><b>程序质检</b><span>检查事实、格式与图文匹配</span></div><div class="flow-node"><small>04</small><b>人工审核</b><span>校准表达并确认风险</span></div><div class="flow-node"><small>05</small><b>内容交付</b><span>形成可用稿件</span></div></div></div>
     </div></section>
 
+    <section class="section" id="agent"><div class="wrap">
+      <div class="section-head"><div><p class="kicker">PROJECT 02 · 企业平台</p><h2>企业 AI Agent 平台产品设计</h2><p class="lead">从搭建、测试到审核使用的产品方案与交互原型</p><p class="lead">围绕企业内部搭建和使用 AI Agent 的场景，梳理平台管理员、业务搭建者和员工的需要，设计从创建、测试、审核到使用与运行审计的产品方案。</p></div><span class="demo">产品方案 · 交互原型</span></div>
+      <div class="agent-showcase">
+        <figure class="agent-preview"><img src="assets/agent-platform-builder-preview.png" alt="企业 AI Agent 平台创建 Agent 的交互原型界面"><figcaption class="agent-caption"><span>Agent 创建页 · 交互原型</span><span>模拟数据，未连接真实系统</span></figcaption></figure>
+        <article class="agent-work"><p class="kicker">MY CONTRIBUTION</p><h3>我负责的工作</h3><ul>
+          <li><b>产品定位与需求梳理</b><span>明确平台使用角色，区分平台管理、业务搭建和员工使用的任务。</span></li>
+          <li><b>关键操作设计</b><span>梳理 Agent 创建、模型与工具配置、测试检查和审核发布的主要页面。</span></li>
+          <li><b>企业治理设计</b><span>把权限边界、发布审批、运行审计和版本回滚纳入产品方案。</span></li>
+          <li><b>原型与架构呈现</b><span>完成可交互原型和产品架构图，便于讨论方案和后续验证。</span></li>
+        </ul></article>
+      </div>
+    </div></section>
+
     <section class="section" id="finance"><div class="wrap">
-      <div class="section-head"><div><p class="kicker">PROJECT 02 · 金融研究</p><h2>金融 AI 投研</h2><p class="lead">股票分析智能体系统</p><p class="lead">针对 A 股日常投研、复盘研判场景，搭建<strong>数据驱动、模型辅助、人工终审</strong>的自动化投研工作流，解决传统 AI 投研数据不可靠、结论不可控、无法迭代复用的落地痛点。</p></div><span class="state">金融 AI 工作台验证中</span></div>
+      <div class="section-head"><div><p class="kicker">PROJECT 03 · 金融研究</p><h2>金融 AI 投研</h2><p class="lead">股票分析智能体系统</p><p class="lead">针对 A 股日常投研、复盘研判场景，搭建<strong>数据驱动、模型辅助、人工终审</strong>的自动化投研工作流，解决传统 AI 投研数据不可靠、结论不可控、无法迭代复用的落地痛点。</p></div><span class="state">金融 AI 工作台验证中</span></div>
       <figure class="finance-view"><img class="finance-image" src="assets/finance-ai-workbench-reference.png" alt="金融 AI 工作台演示页面，展示项目空间、研究任务和金融业务场景"><figcaption class="finance-caption"><span>金融 AI 工作台 · 商业化场景页面示意</span><span>界面任务、指标为虚构演示数据；工作台仍在验证中</span></figcaption></figure>
       <div class="finance-points"><article class="finance-card"><h3>项目成果</h3><p>搭建完成一套常态化自用的标准化 AI 投研辅助工具，实现金融 AI 分析流程规范化、风险可控化、结果可验证，持续迭代优化中。</p></article><article class="finance-card"><h3>AI 使用边界</h3><p>AI 辅助信息整理与分析报告生成；数据和规则由程序处理，研究结论由人工终审，不替代交易决策。</p></article></div>
       <p class="model"><b>模型配置说明：</b>金融研究项目当前配置快照为 Solar Pro 4 · Nous provider（2026-10-16）。公众号内容链路由文本模型负责文案、独立视觉链路负责配图；具体运行模型按任务配置。</p>
@@ -84,6 +100,6 @@
       <p class="summary"><strong>一句话总结：</strong>主动学习，用真实场景验证想法和AI落地效果，理论与实践不断结合提升AI能力</p>
     </div></section>
   </main>
-  <footer><div class="wrap footer-in"><span><b>高聪 · AI 项目集</b></span><span>公众号内容生产 · 金融 AI 投研（工作台验证中）</span></div></footer>
+  <footer><div class="wrap footer-in"><span><b>高聪 · AI 项目集</b></span><span>公众号内容生产 · 企业 AI Agent 平台 · 金融 AI 投研（工作台验证中）</span></div></footer>
 </body>
 </html>
